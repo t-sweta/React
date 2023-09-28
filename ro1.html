@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    
+    <h2>helloe babe</h2>    <!--this will not be printed-->
+    <!-- (root k andr ek hi elemnt render hota hai,hence agr do show krna hai to ek or div k and wrap kr do) -->
+  
+
+  </div>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script>
+    // let heading = document.createElement("h1");
+    // (attributes are called props in react,and its id ,class and attribute)
+    let heading = React.createElement("h1",{
+      id:"heading",
+      name :"NITEST"
+    },"hello world");
+    let heading2 = React.createElement("h2",{
+      id:"heading2",
+      name :"NITEST"
+    },"hello babe");
+    // heading.innerHTML='hello world';
+    //(whenver u want eact things to put then u need to make its root,make the above div as reac root)
+    // let root = document.querySelector('.root');
+    let container = React.createElement("div",null,[heading,heading2]);
+    let root = ReactDOM.createRoot(document.querySelector("#root"));
+    //(method to inject this is render)
+    root.render(container);
+    // root.render(heading);
+
+    // root.append(heading);
+
+  </script>
+</body>
+  
+</html>
